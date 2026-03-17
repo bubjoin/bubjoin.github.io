@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXIOMA | 자명한 원리</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;600&family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f4f4f2;
+            --text-color: #1a1a1a; /* 본문 먹색 */
+            --sub-text-color: #444; /* 슬로건 및 보조 텍스트 (기존보다 강화) */
+            --accent-color: #777; /* 메뉴 및 구분선 (기존보다 강화) */
+            --max-width: 800px;
+        }
+
+        /* 스크롤바 커스텀 */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbcbca;
+            border-radius: 10px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Noto Serif KR', serif;
+            line-height: 2;
+            letter-spacing: -0.02em;
+            word-break: keep-all;
+            animation: initialFade 2.5s ease-in-out;
+        }
+
+        @keyframes initialFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300; /* 100에서 300으로 상향하여 선명도 확보 */
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
+            letter-spacing: 1.2em;
+            text-indent: 1.2em;
+            color: var(--text-color);
+        }
+
+        .slogan {
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            font-weight: 400; /* 300에서 400으로 상향 */
+            color: var(--sub-text-color); /* 더 짙은 색상 적용 */
+            margin-top: 5vh;
+            letter-spacing: 0.15em;
+            padding: 0 10px;
+        }
+
+        nav {
+            margin-top: 8vh;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.75rem;
+            margin: 0 1.5rem;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.3em;
+            opacity: 0.7; /* 0.5에서 0.7로 상향 */
+            transition: opacity 0.4s;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        section {
+            padding: 30vh 0;
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300; /* 100에서 300으로 상향 */
+            letter-spacing: 0.6em;
+            font-size: 0.85rem;
+            margin-bottom: 15vh;
+            text-transform: uppercase;
+            color: var(--accent-color); /* 더 짙은 색상 적용 */
+            text-align: center;
+        }
+
+        .post {
+            margin-bottom: 25vh;
+        }
+
+        .post-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+
+        .post-content {
+            font-size: 0.95rem;
+            color: #222; /* 미세하게 더 진하게 조정 */
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        .quote-box {
+            margin: 25vh 0;
+            font-style: italic;
+            color: #555; /* 기존 888에서 555로 대폭 강화 */
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 2.2;
+        }
+
+        .locked {
+            text-align: center;
+            color: #888; /* 기존 bbb에서 888로 강화 */
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            padding: 10vh 0;
+            border-top: 1px solid #dcdcdc;
+            border-bottom: 1px solid #dcdcdc;
+        }
+
+        footer {
+            padding: 15vh 0;
+            font-size: 0.65rem;
+            color: #999; /* 기존 ccc에서 999로 강화 */
+            letter-spacing: 0.4em;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                margin: 0.5rem 1rem;
+            }
+            section {
+                padding: 20vh 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="hero">
+            <div class="logo">AXIOMA</div>
+            <div class="slogan">복잡한 문제일수록, 답은 자명한 원리에 있다.</div>
+            <nav>
+                <a href="#trace">Trace</a>
+                <a href="#logic">Logic</a>
+                <a href="#archive">Archive</a>
+            </nav>
+        </div>
+
+        <div class="quote-box">
+            "진정 가치 있는 것은 효율 나쁜 행위를 통해서만이 획득된다."
+        </div>
+
+        <section id="trace">
+            <h2>Trace</h2>
+            <div class="post">
+                <div class="post-title">비효율의 가치</div>
+                <div class="post-content">
+                    국토종주를 하며 깨달은 것은, 진정 가치 있는 것은 효율 나쁜 행위를 통해서만이 획득된다는 사실이다. 2026년의 AI 시대에도, 나의 속도로 걷는 완주의 감각은 대체되지 않는다.
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-title">빛으로 그리는 안도</div>
+                <div class="post-content">
+                    사진에 감정을 담을 수 있게 된다면, 강렬함보다는 안도와 다행을 담고 싶다. 행복은 모르겠지만 무탈함을 줄 수 있는 사람으로 남기를 바란다.
+                </div>
+            </div>
+        </section>
+
+        <section id="logic">
+            <h2>Logic</h2>
+            <div class="post">
+                <div class="post-title">원형에 대한 역공학</div>
+                <div class="post-content">
+                    어떤 것들은 눈에 보이지 않지만 존재한다. 복잡한 문제일수록 본질적인 기본이 중요하다. 간결한 원리에 닿기 위해 필요한 것은 정공학을 전제로 한 역공학적 집요함이다.
+                </div>
+            </div>
+        </section>
+
+        <section id="archive">
+            <h2>Archive</h2>
+            <div class="locked">
+                <p>선별된 사유의 기록</p>
+                <p>ACCESS RESTRICTED</p>
+            </div>
+        </section>
+
+        <footer>
+            © 2026 AXIOMA. REVERSE ENGINEERING PHILOSOPHY.
+        </footer>
+    </div>
+
+</body>
+</html>
